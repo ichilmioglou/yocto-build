@@ -1,0 +1,8 @@
+# Boot partition
+part /boot --source bootimg-partition --ondisk mmcblk --fstype=vfat --label boot --active --fixed-size=128M
+
+# Root filesystem partition
+part / --source rootfs --ondisk mmcblk --fstype=ext4 --label root --fixed-size=1024M
+
+# Custom data partition
+part /data --ondisk mmcblk --fstype=ext4 --label data --fixed-size=128M
